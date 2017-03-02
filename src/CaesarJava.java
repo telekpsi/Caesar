@@ -47,16 +47,30 @@ public class CaesarJava {
 		for (int i=0; i<uPhrase.length(); i++){
 			char u=uPhrase.charAt(i);
 			if (u>='A' && u<='Z'){
-				u+=key;
-				//check for wraparound
-				if (u>'Z')
-					u-=26;
+				if (choice.compareTo("d")==0){
+					u+=key;
+					if (u>'Z')
+						u-=26;
+				}
+				else{
+					u-=key;
+					if (u<'A')
+						u+=26;
+				}
+				
+				
 			}
 			if (u>='a' && u<='z'){
-				u+=key;
-				//check for wraparound
-				if (u>'z')
-					u-=26;
+				if (choice.compareTo("d")==0){
+					u+=key;
+					if (u>'z')
+						u-=26;
+				}
+				else{
+					u-=key;
+					if (u<'a')
+						u+=26;
+				}
 			}
 			mePhrase+=u;
 		}
