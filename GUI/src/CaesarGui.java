@@ -13,6 +13,8 @@ import javax.swing.JFrame;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.regex.Pattern;
+import java.awt.Color;
 
 public class CaesarGui extends JPanel{
 	private JTextField txtKey;
@@ -28,12 +30,12 @@ public class CaesarGui extends JPanel{
 			char u=input.charAt(i);
 			if (u>='A' && u<='Z'){
 				if (de==('d')){
-					u+=key;
+					u+=key%26;
 					if (u>'Z')
 						u-=26;
 				}
 				else{
-					u-=key;
+					u-=key%26;
 					if (u<'A')
 						u+=26;
 				}	
@@ -41,36 +43,37 @@ public class CaesarGui extends JPanel{
 			
 			if (u>='a' && u<='z'){
 				if (de==('d')){
-					u+=key;
+					u+=key%26;
 					if (u>'z')
 						u-=26;
 				}
 				else{
-					u-=key;
+					u-=key%26;
 					if (u<'a')
 						u+=26;
 				}
 			}
-			
-			/*if (u>='0' && u<='9'){
+			/*
+			if (u>='0' && u<='9'){
 				if (de==('d')){
-					u+=key;
-					if (u>'Z')
+					u+=(key%10);
+					if (u>'9')
 						u-=10;
 				}
 				else{
-					u-=key;
+					u-=(key%10);
 					if (u<'A')
 						u+=10;
 				}
-			}*/
-			
+			}
+			*/
 			out+=u;	
 		}
 		return out;
 	}
 	
 	public CaesarGui() {
+		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
 		
 		txtIn = new JTextArea();
@@ -100,6 +103,10 @@ public class CaesarGui extends JPanel{
 			public void mouseClicked(MouseEvent arg0) {
 				input=txtIn.getText();
 				String tempKey=txtKey.getText();
+				if (Pattern.matches("[a-zA-Z]+", tempKey)==true){
+					JOptionPane.showMessageDialog(txtKey, "Numbers only please");
+					return;
+				}
 				key=Integer.parseInt(tempKey);
 				txtOut.setText(inToOut('e'));
 			}
@@ -113,7 +120,11 @@ public class CaesarGui extends JPanel{
 			public void mouseClicked(MouseEvent e) {
 				input=txtIn.getText();
 				String tempKey=txtKey.getText();
-				key=Integer.parseInt(tempKey);
+				if (Pattern.matches("[a-zA-Z]+", tempKey)==true){
+					JOptionPane.showMessageDialog(txtKey, "Numbers only please");
+					return;
+				}
+				key=(Integer.parseInt(tempKey));
 				txtOut.setText(inToOut('d'));
 			}
 		});
@@ -152,7 +163,6 @@ public class CaesarGui extends JPanel{
 		add(btnCopy);
 	}
 
-	
 	public static void main(String[] args) {
 		
 		JFrame frame = new JFrame ("David's Caesar Cipher Tool");
