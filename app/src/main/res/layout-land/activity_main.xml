@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@android:color/holo_orange_light"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Caesar Cipher Encoder/Decoder"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/txtIn"
+            android:layout_width="300dp"
+            android:layout_height="147dp"
+            android:layout_gravity="left"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/background_light"
+            android:inputType="textMultiLine"
+            android:selectAllOnFocus="true"
+            android:text="Enter Text Here"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/txtOut"
+            android:layout_width="300dp"
+            android:layout_height="147dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/background_dark"
+            android:inputType="textMultiLine"
+            android:text="Output text here"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/deSwitch"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:linksClickable="false"
+        android:showText="true"
+        android:splitTrack="false"
+        android:switchMinWidth="15dp"
+        android:textOff="Encode"
+        android:textOn="Decode"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <SeekBar
+            android:id="@+id/seek"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="346dp"
+            android:layout_height="34dp"
+            android:clickable="true"
+            android:max="26"
+            android:progress="0"/>
+
+        <TextView
+            android:id="@+id/keyText"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Current Key: 0"
+            android:textAlignment="center"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
+    tools:context="comtelekpsi.github.caesar.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <EditText
+        android:id="@+id/txtOut"
+        android:layout_width="341dp"
+        android:layout_height="147dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/background_dark"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Output text here"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caesar Cipher Encoder/Decoder"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/txtIn"
+        android:layout_width="341dp"
+        android:layout_height="147dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:selectAllOnFocus="true"
+        android:text="Enter Text Here"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+    <SeekBar
+        android:id="@+id/seek"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="346dp"
+        android:layout_height="34dp"
+        android:clickable="true"
+        android:max="26"
+        android:progress="0"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtOut"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/shifterView"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="CIPHER SHIFT"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/seek"/>
+
+    <TextView
+        android:id="@+id/keyText"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Current Key: 0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtOut"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seek"
+        tools:layout_editor_absoluteY="323dp"
+        app:layout_constraintVertical_bias="0.333"/>
+
+    <Switch
+        android:id="@+id/deSwitch"
+        android:layout_width="110dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:linksClickable="false"
+        android:showText="true"
+        android:splitTrack="false"
+        android:textOff="Encode"
+        android:textOn="Decode"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/shifterView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIn"
+        app:layout_constraintVertical_bias="0.533"
+        tools:layout_editor_absoluteX="130dp"/>
+
+</android.support.constraint.ConstraintLayout>
