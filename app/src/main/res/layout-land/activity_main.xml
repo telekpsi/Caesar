@@ -25,7 +25,7 @@
 
         <EditText
             android:id="@+id/txtIn"
-            android:layout_width="300dp"
+            android:layout_width="290dp"
             android:layout_height="147dp"
             android:layout_gravity="left"
             android:layout_marginEnd="8dp"
@@ -41,7 +41,7 @@
 
         <EditText
             android:id="@+id/txtOut"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="147dp"
             android:layout_gravity="right"
             android:layout_marginLeft="8dp"
@@ -51,7 +51,8 @@
             android:inputType="textMultiLine"
             android:text="Output text here"
             android:textAlignment="center"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:textIsSelectable="true"/>
     </LinearLayout>
 
     <Switch
